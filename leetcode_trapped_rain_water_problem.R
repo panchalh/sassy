@@ -25,11 +25,15 @@ for(i in 1:mxhgt)
   }
   #print(paste('i=', i))
   #print(hgtn)
+  
+  # remove leading zeros as no water can be trapped there. (water can only get trapped between rocks.)
   dips<-hgtn
   for (r in 1:length(hgtn)){
     if (dips[1]==0) dips<-dips[-1]
     #print(dips)
   }
+  
+  # remove trailing zeros as no water can be trapped there. (water can only get trapped between rocks.)
   dipsrev<-rev(dips)
   for (r in 1:length(dipsrev)){
     if (dipsrev[1]==0) dipsrev<-dipsrev[-1]
